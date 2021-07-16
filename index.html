@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS homework 3</title>
+</head>
+<body>
+<script>
+// 1. створити функцію яка обчислює та повертає площу прямокутника висотою
+
+function calcRectangleSquare(a, b) {
+  return a * b;
+}
+
+console.log(calcRectangleSquare(4, 7));
+
+// 2. створити функцію яка обчислює та повертає площу кола
+
+function calcCircleSquare(d) {
+  return Math.PI * Math.pow((d / 2), 2);
+}
+
+console.log(calcCircleSquare(10));
+
+// 3. створити функцію яка обчислює та повертає площу циліндру (об'єм???)
+
+function calcCylinderVolume(d, h) {
+  return Math.PI * Math.pow((d / 2), 2) * h;
+}
+
+console.log(calcCylinderVolume(10, 4));
+
+// 4. створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math
+//    використовувати заборонено);
+
+function sortArray(arr) {
+  arr.sort((a, b) => a - b);
+  console.log(arr[arr.length - 1]);
+  return arr[0];
+}
+
+let numArray = [22, 0.5, -30, 3, 100, -555, 0, 48];
+
+console.log(sortArray(numArray));
+
+// 5. створити функцію яка при створює блок з текстом. Текст задати через аргумент
+
+function createDivWithText(text) {
+  document.write(`<div>${text}</div>`);
+}
+
+createDivWithText('Block with text');
+
+// 6. створити функцію яка при створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+
+function createList(text) {
+  document.write(`
+    <ul>
+      <li>${text}</li>
+      <li>${text}</li>
+      <li>${text}</li>
+    </ul>
+  `);
+}
+
+createList('Li with text');
+
+// 7. створити функцію яка при створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
+//    Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+
+function createListInLoop(text, amount) {
+  document.write('<ul>');
+  for (let i = 0; i < amount; i++) {
+    document.write(`<li>${i} - ${text}</li>`);
+  }
+  document.write('</ul>');
+}
+
+createListInLoop('Text in li element', 5);
+
+// 8. створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+
+function createListFromArray(arr) {
+  document.write('<ul>');
+  for (const item of arr) {
+    document.write(`<li>${item}</li>`);
+  }
+  document.write('</ul>');
+}
+
+createListFromArray([123, 'qwe', true, 'asd', 0.456, false, 99]);
+
+</script>
+</body>
+</html>
