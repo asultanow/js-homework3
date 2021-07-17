@@ -15,7 +15,7 @@ function calcRectangleSquare(a, b) {
   return a * b;
 }
 
-console.log(calcRectangleSquare(4, 7));
+console.log('calcRectangleSquare:', calcRectangleSquare(4, 7));
 
 // 2. створити функцію яка обчислює та повертає площу кола
 
@@ -23,7 +23,7 @@ function calcCircleSquare(d) {
   return Math.PI * Math.pow((d / 2), 2);
 }
 
-console.log(calcCircleSquare(10));
+console.log('calcCircleSquare:', calcCircleSquare(10));
 
 // 3. створити функцію яка обчислює та повертає площу циліндру (об'єм???)
 
@@ -31,20 +31,36 @@ function calcCylinderVolume(d, h) {
   return Math.PI * Math.pow((d / 2), 2) * h;
 }
 
-console.log(calcCylinderVolume(10, 4));
+console.log('calcCylinderVolume:', calcCylinderVolume(10, 4));
 
 // 4. створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math
 //    використовувати заборонено);
 
 function sortArray(arr) {
   arr.sort((a, b) => a - b);
-  console.log(arr[arr.length - 1]);
+  console.log('from sortArray:', arr[arr.length - 1]);
   return arr[0];
 }
 
-let numArray = [22, 0.5, -30, 3, 100, -555, 0, 48];
+function findMinAndMax(arr) {
+  let min = arr[0];
+  let max = arr[0];
 
-console.log(sortArray(numArray));
+  for (const elem of arr) {
+    if (elem < min) {
+      min = elem;
+    }
+    if (elem > max) {
+      max = elem;
+    }
+  }
+
+  console.log('from findMinAndMax:', max);
+  return min;
+}
+
+console.log('findMinAndMax:', findMinAndMax([22, 0.5, -30, 3, 100, -555, 0, 48]));
+console.log('sortArray:', sortArray([5, -38, 18, 80, 0.45, -389, 50]));
 
 // 5. створити функцію яка при створює блок з текстом. Текст задати через аргумент
 
@@ -74,7 +90,7 @@ createList('Li with text');
 function createListInLoop(text, amount) {
   document.write('<ul>');
   for (let i = 0; i < amount; i++) {
-    document.write(`<li>${i} - ${text}</li>`);
+    document.write(`<li>${text}</li>`);
   }
   document.write('</ul>');
 }
@@ -85,8 +101,8 @@ createListInLoop('Text in li element', 5);
 
 function createListFromArray(arr) {
   document.write('<ul>');
-  for (const item of arr) {
-    document.write(`<li>${item}</li>`);
+  for (const elem of arr) {
+    document.write(`<li>${elem}</li>`);
   }
   document.write('</ul>');
 }
