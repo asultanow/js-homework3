@@ -25,13 +25,13 @@ function calcCircleSquare(d) {
 
 console.log('calcCircleSquare:', calcCircleSquare(10));
 
-// 3. створити функцію яка обчислює та повертає площу циліндру (об'єм???)
+// 3. створити функцію яка обчислює та повертає площу циліндру
 
-function calcCylinderVolume(d, h) {
-  return Math.PI * Math.pow((d / 2), 2) * h;
+function calcCylinderSquare(diameter, hight) {
+  return 2 * Math.PI * Math.pow((diameter / 2), 2) + Math.PI * diameter * hight;
 }
 
-console.log('calcCylinderVolume:', calcCylinderVolume(10, 4));
+console.log('calcCylinderSquare:', calcCylinderSquare(5, 10));
 
 // 4. створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math
 //    використовувати заборонено);
